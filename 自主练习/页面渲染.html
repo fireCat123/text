@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app='myApp' ng-controller="myCon">
+<div ng-bind-html="name">
+
+</div>
+<script src='angular.js'></script>
+<script src='angular-sanitize.js'></script>
+<script>
+    var app = angular.module("myApp",["ngSanitize"]);
+    app.controller("myCon",["$scope",function($scope){
+        $scope.name="<p>dfd</p>";
+    }])
+</script>
+</body>
+</html>

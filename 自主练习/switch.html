@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .red{
+            background:red;
+        }
+        .blue{
+            background:blue;
+        }
+        .pink{
+            background:pink;
+        }
+
+    </style>
+</head>
+<body ng-app="app" ng-controller="myCon">
+<!--根据ng-switch对应的值去做判断，如果符合ng-switch-when的条件则显示-->
+<!--其他不显示的会被注释掉-->
+<div ng-switch="name">
+    <div ng-switch-when="a">aaa</div>
+    <div ng-switch-when="b">bbb</div>
+    <div ng-switch-when="c">ccc</div>
+</div>
+<script src="./angular.js">
+</script>
+<script>
+    var app=angular.module('app',[])
+    app.controller('myCon',['$scope',function($scope){
+        $scope.name="a";
+    }])
+</script>
+</body>
+</html>

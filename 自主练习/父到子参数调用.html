@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="parent">
+    <button ng-click="click()">start</button>
+    <div ng-controller="child">
+
+    </div>
+</div>
+<script src='angular.js'></script>
+<script>
+    var app = angular.module("myApp",[]);
+    app.controller("parent",function($scope){
+        //广播
+        //第一个参数是绑定事件名，第二个参数是传递的值
+        $scope.click = function(){
+            $scope.$broadcast("to-child","传递到子元素");
+        }
+
+    })
+    app.controller("child",function($scope){
+        //接收
+        //第一个参数是绑定的事件名，第二个参数回调函数
+        //函数内第一个参数是事件，第二个参数是数据
+        $scope.$on("to-child",function(event,data){
+            console.log(data);
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-app='myApp' ng-controller='myCon'>
+    <p>{{name}}</p>
+</div>
+<script src='angular.js'></script>
+<script>
+    var app = angular.module('myApp',[]);
+    //压缩方法，第一个参数是控制的值，第二个参数数组，
+    //数组内第一个参数是$scope,第二个是个回调函数
+    app.controller('myCon',['$scope',function($scope){
+       $scope.name=123;
+    }])
+</script>
+</body>
+</html>

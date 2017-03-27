@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src='angular.js'></script>
+<script>
+    var obj={name:'张三',age:18};
+    //angular中的foreach方法 第一个参数是对象，第二个参数是callback
+    // callback，其中v是属性值，k是属性
+    angular.forEach(obj,function(v,k){
+        console.log(k);
+        console.log(v);
+    })
+</script>
+</body>
+</html>
